@@ -1,0 +1,659 @@
+<!-- 
+AIOU Master Assignment Finder - Premium SEO Version 
+Optimized for Google Ranking, Student Experience, and Fast Loading
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --primary: #1e3c72;
+        --secondary: #2b6e9e;
+        --accent: #f59e0b;
+        --success: #27ae60;
+        --bg-body: #f8fafc;
+        --text-main: #1e293b;
+        --border-color: #e2e8f0;
+        --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .assignments-article {
+        font-family: 'Inter', sans-serif;
+        color: var(--text-main);
+        background: var(--bg-body);
+        line-height: 1.6;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 0;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(30, 60, 114, 0.2);
+    }
+
+    .hero-banner h1 {
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero-banner p {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        max-width: 800px;
+        margin: 0 auto 35px;
+    }
+
+    /* Program Navigation */
+    .quick-nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .quick-nav a {
+        background: rgba(255,255,255,0.15);
+        color: white;
+        padding: 10px 22px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .quick-nav a:hover {
+        background: white;
+        color: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Floating Search */
+    .search-section {
+        max-width: 850px;
+        margin: -45px auto 50px;
+        padding: 0 20px;
+        position: sticky;
+        top: 25px;
+        z-index: 1000;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 80px;
+        padding: 10px 20px;
+        box-shadow: var(--shadow-lg);
+        border: 2px solid transparent;
+        transition: 0.3s;
+    }
+
+    .search-box:focus-within {
+        border-color: var(--accent);
+        transform: scale(1.02);
+    }
+
+    .search-box i {
+        color: var(--secondary);
+        font-size: 1.5rem;
+        margin: 0 15px;
+    }
+
+    .search-box input {
+        flex: 1;
+        border: none;
+        padding: 18px 0;
+        font-size: 1.2rem;
+        outline: none;
+        background: transparent;
+    }
+
+    /* Table Sections */
+    .content-area {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 25px;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--primary);
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin: 0;
+    }
+
+    .table-card {
+        background: white;
+        border-radius: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
+        margin-bottom: 40px;
+    }
+
+    .modern-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+    .modern-table th {
+        background: #f8fafc;
+        padding: 20px 15px;
+        text-align: center;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #64748b;
+        letter-spacing: 0.05em;
+    }
+
+    .modern-table td {
+        padding: 18px 15px;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .modern-table tr:hover {
+        background: rgba(37, 99, 235, 0.02);
+    }
+
+    /* Status & Credit Badges */
+    .badge-ch {
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        background: #eff6ff;
+        color: #2563eb;
+        white-space: nowrap;
+    }
+
+    .badge-ch.full { background: #fff7ed; color: #c2410c; }
+
+    /* Download Buttons */
+    .dl-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        background: var(--success);
+        color: white !important;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+        box-shadow: 0 4px 6px rgba(39,174,96,0.2);
+    }
+
+    .dl-btn:hover {
+        background: #1e8449;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(39,174,96,0.3);
+    }
+
+    .dl-btn.missing {
+        background: #94a3b8;
+        box-shadow: none;
+    }
+
+    .dl-btn.missing:hover {
+        background: var(--secondary);
+    }
+
+    .na-txt { color: #cbd5e1; font-weight: 500; }
+
+    /* Guide Box */
+    .guide-banner {
+        background: #fffbeb;
+        border-radius: 24px;
+        padding: 30px;
+        margin: 40px 0;
+        border: 2px dashed #fcd34d;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .guide-banner i { font-size: 3rem; color: var(--accent); }
+
+    /* Footer CTA */
+    .whatsapp-footer {
+        background: #065f46;
+        color: white;
+        padding: 50px 30px;
+        border-radius: 30px;
+        text-align: center;
+        margin: 80px 0 40px;
+    }
+
+    .btn-whatsapp {
+        background: #25D366;
+        color: #1a1a1a;
+        padding: 15px 35px;
+        border-radius: 60px;
+        text-decoration: none;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+        background: #128C7E;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    /* Dark Mode */
+    :is(.drk, .dark, .darkMode) .assignments-article { background: #0f172a; color: #f1f5f9; }
+    :is(.drk, .dark, .darkMode) .table-card, 
+    :is(.drk, .dark, .darkMode) .search-box { background: #1e293b; border-color: #334155; }
+    :is(.drk, .dark, .darkMode) .modern-table th { background: #334155; color: #94a3b8; }
+    :is(.drk, .dark, .darkMode) .modern-table td { border-color: #334155; }
+    :is(.drk, .dark, .darkMode) .guide-banner { background: #1c1917; border-color: #44403c; }
+
+    @media (max-width: 768px) {
+        .hero-banner h1 { font-size: 2.2rem; }
+        .modern-table th, .modern-table td { padding: 12px 8px; font-size: 0.85rem; }
+        .dl-btn { padding: 8px 12px; font-size: 0.75rem; }
+    }
+</style>
+
+<div class="assignments-article">
+    <!-- Premium Header Area -->
+    <div class="hero-banner">
+        <h1>AIOU Master Finder</h1>
+        <p>Verified Spring 2026 Solved Assignments for all levels. Organized by Credit Hours (3CH/6CH) for easy navigation.</p>
+        
+        <div class="quick-nav">
+            <a href="#matric"><i class="fas fa-book"></i> Matric</a>
+            <a href="#inter"><i class="fas fa-university"></i> Intermediate</a>
+            <a href="#bachelor"><i class="fas fa-graduation-cap"></i> Bachelor</a>
+            <a href="#bs"><i class="fas fa-laptop-code"></i> BS / ADE</a>
+            <a href="#masters"><i class="fas fa-award"></i> B.Ed / MA</a>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="mainSearch" placeholder="Type course code (e.g. 1423, 247, 8601)...">
+            <div id="resultInfo" style="padding: 0 15px; color: var(--secondary); font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <div class="guide-banner">
+            <i class="fas fa-info-circle"></i>
+            <div>
+                <h3 style="margin: 0 0 10px 0; color: #92400e;">Student Guide: Credits & Assignments</h3>
+                <p style="margin: 0; color: #b45309;">
+                    <span class="badge-ch">3CH</span> courses have **2 Assignments**. <br>
+                    <span class="badge-ch full">6CH</span> courses have **4 Assignments**. <br>
+                    Search your code below to find direct PDF download links.
+                </p>
+            </div>
+        </div>
+
+        <!-- MATRIC SECTION -->
+        <div class="section-header" id="matric">
+            <h2>📘 Matric (SSC)</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="matricTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>201</td><td>Islamiat</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1x-DU29a1hI0gojNPrbPbBGsvoi8xoaGi&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1q_PkdZTeJ70aiEDeNCMBM5qNbt7qMOr7&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>202</td><td>Pakistan Studies</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1QOUR54gG2yYriTGcGOa3olILgLHfr-e0/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>207</td><td>English Compulsory - I</td><td><span class="badge-ch full">6CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <tr><td>247</td><td>Mathematics - I</td><td><span class="badge-ch full">6CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1gDPVxJ5axCJ4CSyp4grmhw7hE9dn2XBq/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <!-- More rows will be handled by script if empty -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- INTERMEDIATE SECTION -->
+        <div class="section-header" id="inter">
+            <h2>📙 Intermediate (FA/FSc)</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="interTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>315</td><td>English - I</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>316</td><td>English - II</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>317</td><td>Pakistan Studies</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1fLAiR23u53iMckEm3gv-D-qfT64yOERI&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1Jpiazsun7qnuia2RqZ0855dg2D0JlZO1&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BACHELOR SECTION -->
+        <div class="section-header" id="bachelor">
+            <h2>🎓 Bachelor (BA/AD)</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="bachelorTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>411</td><td>Sociology - I</td><td><span class="badge-ch full">6CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <tr><td>417</td><td>Pakistan Studies</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1ckG7Xr06uZc4p_kX_2SUN97G6Vz87DNB&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1y9F6Gw_QDMrQ7WO3Jha3wD-V-IT2yFOX&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BS SECTION -->
+        <div class="section-header" id="bs">
+            <h2>📚 BS Programs</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="bsTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1423</td><td>English - I</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1PTIRydqsbzTWIbE6b0MF3dxkxyzffx_M&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1zL0LZVOqT7PHw6exUsW6Hq6hUD8Wp1ps&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>1424</td><td>English - II</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1zLc1rdqm7mM7_Mc8cmZUTo-_lVNUU_iv/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>1429</td><td>Business Maths</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1Q0pqctUaPsCtGaJreqvyoF63rDPwPggw/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>1431</td><td>Basics of ICT</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/16hQs0z5yGdJZ10OCr2-KEhfXlTZ16guE/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- B.ED / MASTERS -->
+        <div class="section-header" id="masters">
+            <h2>📖 B.Ed / Masters</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="mastersTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>8601</td><td>Curriculum Dev</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1plXPffqy6KMdo-U562OAlVlD1PPqNWA9/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1w048widRQDGAayTGXWdzEETXo4lnGe1z/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>8602</td><td>Assessment</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1NMmXz5eDwkBt8TJSMf1afY1CmfdNxq4t/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BBA / MBA / M.COM SECTION -->
+        <div class="section-header" id="business">
+            <h2>💼 BBA / Business &amp; Commerce</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="businessTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1423</td><td>Business English-I</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1PTIRydqsbzTWIbE6b0MF3dxkxyzffx_M&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn" href="https://drive.google.com/uc?id=1zL0LZVOqT7PHw6exUsW6Hq6hUD8Wp1ps&export=download" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>1424</td><td>Business English-II</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1zLc1rdqm7mM7_Mc8cmZUTo-_lVNUU_iv/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>1429</td><td>Business Maths</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn" href="https://drive.google.com/file/d/1Q0pqctUaPsCtGaJreqvyoF63rDPwPggw/view?usp=drive_link" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>5401</td><td>Principles of Accounting</td><td><span class="badge-ch full">6CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>5402</td><td>Financial Accounting</td><td><span class="badge-ch full">6CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="businessTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>5401</td><td>Business Math</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>5402</td><td>Financial Acc</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>5801</td><td>Quant Techniques</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>5501</td><td>Management Theory</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ADE / NURSING SECTION -->
+        <div class="section-header" id="ade_nursing">
+            <h2>🏥 ADE & Nursing</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="adeTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>6400</td><td>Education in Pak</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>6401</td><td>Psychology</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>5411</td><td>Nursing Concepts</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SPECIALIZED BS (SCIENCE) -->
+        <div class="section-header" id="science">
+            <h2>🔬 BS Science (Botany/Chem/Phy)</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="scienceTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Assig 3</th>
+                        <th>Assig 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>4411</td><td>Diversity Plants</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>4421</td><td>Inorganic Chem</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                    <tr><td>4431</td><td>Mechanics</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- RESEARCH PROJECTS & TEACHING MANUALS -->
+        <div class="section-header" id="projects">
+            <h2>📘 Research Projects &amp; Manuals (8613/8607)</h2>
+            <span class="badge-ch">Spring 2026</span>
+        </div>
+        <div class="table-card">
+            <table class="modern-table" id="projectTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Manual / Project Name</th>
+                        <th>Credits</th>
+                        <th>Assig 1</th>
+                        <th>Assig 2</th>
+                        <th>Manual PDF</th>
+                        <th>Project Help</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>8613</td><td>Research Project</td><td><span class="badge-ch">6CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <tr><td>8607</td><td>Teaching Practice-I</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <tr><td>8608</td><td>Teaching Practice-II</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <tr><td>6413</td><td>ADE Research Project</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td></tr>
+                    <tr><td>8615</td><td>Professionalism in Teaching</td><td><span class="badge-ch">3CH</span></td><td><a class="dl-btn missing" href="#">Search</a></td><td><a class="dl-btn missing" href="#">Search</a></td><td class="na-txt">-</td><td class="na-txt">-</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="whatsapp-footer">
+            <h2>📞 Need Handwritten Assignments?</h2>
+            <p>Get premium quality, university-standard handwritten assignments delivered to your doorstep.</p>
+            <a href="https://wa.me/923702388998" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const searchInput = document.getElementById('mainSearch');
+    const resultInfo = document.getElementById('resultInfo');
+    const tables = document.querySelectorAll('.modern-table');
+
+    function updateTables() {
+        const query = searchInput.value.toLowerCase().trim();
+        let foundCount = 0;
+
+        tables.forEach(table => {
+            const rows = table.querySelectorAll('tbody tr');
+            let hasMatchInTable = false;
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    row.style.display = '';
+                    foundCount++;
+                    hasMatchInTable = true;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            const card = table.closest('.table-card');
+            const header = card ? card.previousElementSibling : null;
+            
+            if (query && !hasMatchInTable) {
+                if(card) card.style.display = 'none';
+                if(header && header.classList.contains('section-header')) header.style.display = 'none';
+            } else {
+                if(card) card.style.display = '';
+                if(header && header.classList.contains('section-header')) header.style.display = '';
+            }
+        });
+
+        if (query) {
+            resultInfo.innerHTML = foundCount > 0 ? `✅ Found ${foundCount}` : `❌ No results`;
+        } else {
+            resultInfo.innerHTML = '';
+        }
+    }
+
+    searchInput.addEventListener('input', updateTables);
+
+    // Auto-Search Logic for missing links
+    tables.forEach(table => {
+        table.querySelectorAll('tr').forEach(row => {
+            const codeCell = row.cells[0];
+            if (codeCell) {
+                const code = codeCell.innerText.trim();
+                const buttons = row.querySelectorAll('.dl-btn.missing');
+                buttons.forEach(btn => {
+                    btn.setAttribute('href', 'https://aioustudio9.com/?s=' + code + '+Spring+2026');
+                    btn.setAttribute('target', '_blank');
+                    btn.title = "Click to search for this code on Provider site";
+                });
+            }
+        });
+    });
+})();
+</script>

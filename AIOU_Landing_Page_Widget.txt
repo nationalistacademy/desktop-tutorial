@@ -1,0 +1,121 @@
+<style>
+/* Animated Gradient Background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Float Animation */
+@keyframes floatUp {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.aiou-hero-modern {
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a73e8);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite, fadeIn 1.2s ease-out forwards;
+  color: white;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glassmorphism inner box */
+.aiou-glass-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+.aiou-hero-modern h1 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.aiou-hero-modern p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #e0f2f1;
+  font-weight: 400;
+}
+
+.aiou-modern-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.aiou-btn-neon {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #ffffff !important;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(229, 46, 113, 0.5);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aiou-btn-neon:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(229, 46, 113, 0.8);
+}
+
+.aiou-btn-glass {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.aiou-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+</style>
+
+<div class="aiou-hero-modern">
+  <div class="aiou-glass-box">
+    <h1>🚀 AIOU Assignmentwaly 2026</h1>
+    <p>Premium LMS Experience. 100% Correct Solved Assignments & Past Papers.</p>
+    <div class="aiou-modern-buttons">
+      <a href="/search/label/Solved%20Assignments" class="aiou-btn-neon">📄 Download Now</a>
+      <a href="https://aaghi.aiou.edu.pk/" target="_blank" class="aiou-btn-glass">🎓 Aaghi Portal</a>
+    </div>
+  </div>
+</div>
